@@ -1,6 +1,8 @@
 'use strict';
 
-function BinarioADecimal(num) {}
+function BinarioADecimal(num) {
+   //holagit push
+}
 
 function DecimalABinario(num) {}
 
