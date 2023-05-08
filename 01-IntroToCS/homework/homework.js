@@ -1,7 +1,7 @@
 'use strict';
 
 function BinarioADecimal(num) {
-   //holagit push
+   //holagit push asdasdads
 }
 
 function DecimalABinario(num) {}
