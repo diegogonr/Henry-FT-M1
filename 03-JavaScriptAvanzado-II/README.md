@@ -58,6 +58,8 @@ var creaFuncion = function(){
         console.log(i);
       }
     )
+    console.log(arreglo[i]());
+
   }
   return arreglo;
 }

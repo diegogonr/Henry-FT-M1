@@ -1,0 +1,23 @@
+var creaFuncion = function(){
+  var arreglo = [];
+
+  for ( var i=0; i < 3; i++){
+    arreglo.push(
+      function(){
+        console.log(i);
+      }
+    )
+    console.log(arreglo[i]());
+    console.log(i);
+
+  }
+
+  //console.log(arreglo[0]());
+  return arreglo;
+}
+
+var arr = creaFuncion();
+
+//arr[0]() // 3 sale un 3, qué esperaban ustedes??
+//arr[1]() // 3
+//arr[2]() // 3
