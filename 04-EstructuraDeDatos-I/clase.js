@@ -1,4 +1,6 @@
+//*****************************************************************
 //* function recursiva
+//*****************************************************************
 
 // function recursiva() {
 //   //Caso base
@@ -13,71 +15,46 @@
 //   }
 // }
 
+// //////////////////////////?
+// function factorial(x) {
+//   if (x==0 || x==1) return 1 
+//   else if(x<0) return 0
+
+//   return x * factorial(x-1);
+// }
+
+// console.log(factorial(4));
+
+
 // function cuentaRegresiva(number) {
 //   //avance
 //   let newNumber = number - 1;
-//   console.log(newNumber);
-//   console.log(number);
 //   //Caso Base
 //   if (number > 0) {
 //     // number--
-
 //     //recursion
+//     console.log(newNumber);
 //     cuentaRegresiva(newNumber);
 //   }
 // }
-
 // cuentaRegresiva(10);
 
 
-//*****************************
+//////////////////////////?
 
 // let comunidad = [
 //   "Frodo 🙋‍♂️",
 //   "Sam 🤷‍♂️",
 //   "Aragorn 👑",
-//   "Pippin 🙍‍♂️",
-//   "Merry 🙆‍♂️",
-//   "Legolas 🏹",
-//   "Gimli 🪓",
-//   "Gandalf 🧙‍♂️",
-//   "Boromir 🧔‍♂️",
 // ];
 
-// function imprimePersonajes() {
-//   // for
-//   for (let i = 0; i < comunidad.length; i++) {
-//     console.log(comunidad[i]);
-//   }
-
-//   // for of
-//   for (let miembro of comunidad) {
-//     console.log(miembro);
-//   }
-
-//   // for each
-//   comunidad.forEach((miembro) => {
-//     console.log(miembro);
-//  });
-
-//   //map
-//   comunidad.map((miembro) => {
-//     console.log(miembro);
-//   });
-
-//   //while pseudo codigo
-//   while (comunidad.length) {
-//     console.log(comunidad[i]);
-//   }
-// }
 
 // function imprimeRecursiva(comunidad) {
 //   if (comunidad.length) {
 //     let miembro = comunidad.shift(); // Aragorn -> el metodo shift modifica el array original
 
-//    console.log(miembro);
+//     console.log(miembro);
 //     console.log(comunidad);
-
 //     imprimeRecursiva(comunidad);
 //   }
 // }
@@ -85,102 +62,89 @@
 // imprimeRecursiva(comunidad);
 
 
-//*************ESTRUCTURA DE DATOS**************** */
 
-//TODO: ARRAY
-let comunidad = [
-  "Frodo 🙋‍♂️",
-  "Sam 🤷‍♂️",
-  "Aragorn 👑",
-  "Pippin 🙍‍♂️",
-  "Merry 🙆‍♂️",
-  "Legolas 🏹",
-  "Gimli 🪓",
-  "Gandalf 🧙‍♂️",
-  "Boromir 🧔‍♂️",
-];
+
+//*****************************************************************
+//*************ESTRUCTURA DE DATOS**************** */
+//*****************************************************************
+
+////////////////////////////////////////////////?
+////?  ARRAY
+////?
+
+// let comunidad = [
+//   "Frodo 🙋‍♂️",
+//   "Sam 🤷‍♂️",
+//   "Aragorn 👑",
+//   "Pippin 🙍‍♂️",
+//   "Merry 🙆‍♂️",
+
+// ];
 
 // console.log(comunidad[3]);
-// console.log(comunidad[2]);
-
 // console.log(comunidad.length);
 
-// console.log(comunidad[comunidad.length - 1]);
 
 // let muerto = comunidad.pop();
-
 // console.log(muerto);
-
 // console.log(comunidad);
 
-// let muerto2 = comunidad.pop();
 
-// console.log(muerto2);
-
-// comunidad.push(muerto2);
+// comunidad.push(muerto);
 
 // let seVanAMordor = comunidad.slice(0, 2); // no modifica el array
-
 // console.log(seVanAMordor);
-
-// console.log(comunidad);
 
 // console.log(comunidad.indexOf("Aragorn 👑"));
 
-// function reyDeGondor() {
-//   if (comunidad.includes("Aragorn 👑")) {
-//     console.log("Aragorn es el legitimo rey");
-//     return;
-//   }
-//   console.log("Gondor needs no king");
-// }
-
-// reyDeGondor();
-
-// comunidad.push("Saruman");
-// comunidad.push("Saruman");
-// comunidad.push("Saruman");
-
-// solo busca y devuelve la primera coincidencia
-// let traidor = comunidad.find((element) => element === "Saruman");​
+// // solo busca y devuelve la primera coincidencia
+// let traidor = comunidad.find((element) => element === "Saruman");
 // console.log(traidor);
 
 // // busca todas las coincidencias
-// let filtrados = comunidad.filter((element) => element !== traidor);​
+// let filtrados = comunidad.filter((element) => element !== "Merry 🙆‍♂️");
 // console.log(filtrados);
 
-// comunidad = filtrados;​
-// console.log(comunidad.find((element) => element === "Saruman"));
+// comunidad = filtrados;
+// console.log(comunidad.find((element) => element === "Sam 🤷‍♂️"));
 
-//TODO: SET ////////////////////////////////////
-const michiPizzeria = new Set([
-  "Hongos 🍄",
-  "Hawaianna / Anana 🍍",
-  "Especial 😺",
-]);
-console.log(michiPizzeria);
-console.log(michiPizzeria.size);
 
-const nuevasPizzas = [
-  "Hongos 🍄",
-  "Hawaianna / Anana 🍍",
-  "Especial 😺",
-  "Rucula 🥬",
-];
+////////////////////////////////////////////////?
+////?  SET 
+////?? No se pueden repetir los elementos, solo en array y objetos, ya que tienen distintos lugares de memoria, por eso se repiten
 
-function agregarPizzas() {
-  nuevasPizzas.forEach((pizza) => {
-    michiPizzeria.add(pizza);
-  });
-}
+// let array = [0,2,3,4,2,{a:0},0, {a:0}]                 //  [0,2,3,4,2,{a:0},0, {a:0}]   
+// let set = new Set (array);            // Set{0,2,3,4, {a:0}, {a:0}}  
 
-agregarPizzas();
 
-console.log(`Se agrego?`, michiPizzeria.has("Rucula 🥬"));
+// const michiPizzeria = new Set([
+//   "Hongos 🍄",
+//   "Hawaianna / Anana 🍍",
+//   "Especial 😺",
+// ]);
+// console.log(michiPizzeria);
+// console.log(michiPizzeria.size);
 
-michiPizzeria.delete("Rucula 🥬");
+// const nuevasPizzas = [
+//   "Hongos 🍄",
+//   "Hawaianna / Anana 🍍",
+//   "Especial 😺",
+//   "Rucula 🥬",
+// ];
 
-console.log(michiPizzeria.has("Rucula 🥬"));  
+// function agregarPizzas() {
+//   nuevasPizzas.forEach((pizza) => {
+//     michiPizzeria.add(pizza);
+//   });
+// }
+
+// agregarPizzas();
+
+// console.log(`Se agrego?`, michiPizzeria.has("Rucula 🥬"));
+
+// michiPizzeria.delete("Rucula 🥬");
+
+// console.log(michiPizzeria.has("Rucula 🥬"));  
 
 // // for (let sabor of michiPizzeria) {
 // //   console.log(sabor);
@@ -190,30 +154,31 @@ console.log(michiPizzeria.has("Rucula 🥬"));
 //   console.log(element);
 // });
 
+////////////////////////////////////////////////?
+////?  STACK  
+////?? LIFO : ultimo en entrar, primero en salir
 
-//TODO: STACK         ////////////////////////////////////
+let pila = [];
+pila.push(1);
+pila.push(2);
+pila.push(3);
+pila.push(4);
+pila.push(5);
 
-// let pila = [];
-// pila.push(1);
-// pila.push(2);
-// pila.push(3);
-// pila.push(4);
-// pila.push(5);
+console.log(pila);
 
-// console.log(pila);
+let ultimoValor = pila.pop();
 
-// let ultimoValor = pila.pop();
+let primerValor = pila.shift();
+console.log(primerValor);
 
-// let primerValor = pila.shift();
-// console.log(primerValor);
+//let valorIntermedio = pila[2]; //   ESTO ESTA MAL!!
 
-// //let valorIntermedio = pila[2]; //   ESTO ESTA MAL!!
+console.log(ultimoValor);
 
-// console.log(ultimoValor);
+//console.log(valorIntermedio);
 
-// //console.log(valorIntermedio);
-
-//////////////////////
+////////////////////?
 function Stack() { //función constructora
   this.arr = [];
 }
@@ -228,8 +193,6 @@ Stack.prototype.delete = function () {
 
 const pilaB = new Stack();
 
-const pilaCopia = new Stack();
-
 pilaB.add(1);
 pilaB.add(2);
 pilaB.add(3);
@@ -237,3 +200,7 @@ pilaB.add(3);
 console.log(pilaB.delete());
 
 console.log(pilaB);
+
+////////////////////////////////////////////////?
+////?  QUEUE  
+////?? FIFO : primero en entrar, primero en salir

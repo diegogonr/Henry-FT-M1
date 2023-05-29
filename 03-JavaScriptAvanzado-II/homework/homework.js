@@ -113,9 +113,9 @@ function crearCadena(delimitadorIzquierda, delimitadorDerecha, cadena) {
     return delimitadorIzquierda + cadena + delimitadorDerecha;
 }
 
-let textoAsteriscos = crearCadena.bind(this,"*","*");
-let textoGuiones = crearCadena.bind(this,"-","-");
-let textoUnderscore = crearCadena.bind(this,"_","_");
+let textoAsteriscos = crearCadena.bind(this,"*","*"); //el primer valor no importa, ya que en la funcion no se usa un this
+let textoGuiones = crearCadena.bind(null,"-","-");
+let textoUnderscore = crearCadena.bind('pepito',"_","_");
 
 
 //! Curry
@@ -127,11 +127,11 @@ let textoUnderscore = crearCadena.bind(this,"_","_");
 
 // ?Gama-
 
-let textoInterrogacion = crearCadena.bind(this, "¿"); // crearCadena("*" , null, null)
+let textoInterrogacion = crearCadena.bind(this, "¿"); // crearCadena("¿" , null, null)
 
-let textoCombinado = textoInterrogacion.bind(this, "😺"); // crearCadena("*", "😺", null)
+let textoCombinado = textoInterrogacion.bind(this, "😺"); // crearCadena("¿", "😺", null)
 
-console.log(textoCombinado("combinado")); //crearCadena("*", "😺", "combinado") "¿combinado😺"
+console.log(textoCombinado("combinado")); //crearCadena("¿", "😺", "combinado") "¿combinado😺"
 
 
 // No modifiquen nada debajo de esta linea

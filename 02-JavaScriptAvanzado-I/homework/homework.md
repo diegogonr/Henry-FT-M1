@@ -164,7 +164,7 @@ console.log(obj.prop.getFullname());
 
 var test = obj.prop.getFullname;
 
-console.log(test());
+console.log(test());  // da undefined porque esta en el contexto de test
 
 /*
 aurelio

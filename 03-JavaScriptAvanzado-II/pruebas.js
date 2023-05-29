@@ -7,7 +7,6 @@ var creaFuncion = function(){
         console.log(i);
       }
     )
-    console.log(arreglo[i]());
     console.log(i);
 
   }

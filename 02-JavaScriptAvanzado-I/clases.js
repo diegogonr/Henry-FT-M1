@@ -1,9 +1,12 @@
+
 ////////////////////////////////////////////////////////////////////////*
-//*  contexto de ejecucion
-////////////////////////////////////////////////////////////////////////*
+//* LEXICAL ENVIROMENT >> hace referencia a DÓNDE esta declarada una variable
+//*  CONTEXT EJECUTION >> hace referencia a QUÉ se esta ejecutando
+//*  contexto de ejecucion --> objeto globlal <--> THIS
+//*  contexto de ejecucion = creacion (se crean las variables y funciones, mas no su valor) + ejecucion
+//*  nuevo llamado a función nuevo contexto de ejecución 
 
 // const yo = "Gama"; // global
-
 // console.log(yo);
 
 // const miFuncion = () => {
@@ -13,8 +16,22 @@
 
 // miFuncion();
 
+// let en ='hi'
+// function person(){
+//   var name = 'FT'
+//   function firstName(){
+//     return name
+//   }
+//   console.log(en + firstName());
+// }
+
+// person();
+
+
+
 ////////////////////////////////////////////////////////////////////////*
-//* hoisting
+//* hoisting >>lo que sucede en la fase de creacion
+//*            solo guardo espacio de memoria para  variables con var y funciones
 ////////////////////////////////////////////////////////////////////////*
 
 // saludar();
@@ -41,9 +58,32 @@
 // console.log(bartolomiau); //Hola soy el Barto 
 // console.log(gama);  // Yo de nuevo
 
+
+
+////////////////////////////////////////////////////////////////////////*
+//* SCOPE >> alcance que tienen las variables
+////////////////////////////////////////////////////////////////////////*
+
+// var global = 'hola'
+
+// function a(){
+//   console.log(global)
+//   global = 'hello';
+// }
+
+// function b(){
+//   console.log(global)
+//   var global = 'chau'
+// }
+
+// a()
+// b()
+
+
+
 ////////////////////////////////////////////////////////////////////////*
 //* This keyword
-​////////////////////////////////////////////////////////////////////////*
+////////////////////////////////////////////////////////////////////////*
 
 // console.log(this); //apunta al objeto global
 
@@ -51,7 +91,7 @@
 //   // ${}
 //   console.log(`Soy ${this.nombre} y tengo un gato llamado ${this.mascota}`);
 
-//   console.log("primero", this); //apunta al objeto global
+//   //console.log("primero", this); //apunta al objeto global
 // };
 
 // describir();
@@ -97,8 +137,7 @@
 // }
 
 // prueba();
-// instructor.describirA();
-// instructorOtro.describirA();
+
 
 //* data types / tipado debil
 //primitivos (strings,booleanos, numero, undefined ,symbol)
@@ -113,7 +152,7 @@
 
 //* Coercion de datos
 // console.log("Yo soy" + " gama y tengo " + 35 + " años");
-// console.log("23" + 3);  //el simbolo + es concatenar
+// console.log("23" + 3);                                  //el simbolo + es concatenar
 // console.log("23" - 3);
 // console.log("gama" - 2);
 // console.log(3 + "23");
@@ -152,18 +191,18 @@
 
 
 //? valor / referencia
-let a = 4;
-let b = {nombre: "gama"};
+// let a = 4;
+// let b = {nombre: "gama"};
 
-console.log(a);
-console.log(b);
+// console.log(a);
+// console.log(b);
 
-a = b;
+// a = b;
 
-console.log(b);
-console.log(a);
+// console.log(b);
+// console.log(a);
 
-b = 234;
+// b = 234;
 
-console.log(b);
-console.log(a);
+// console.log(b);
+// console.log(a);
