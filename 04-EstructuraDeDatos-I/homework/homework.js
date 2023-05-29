@@ -20,57 +20,74 @@ Secuencia:  0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
 Como ejercicio adicional y completamente opcional, al terminar de resolver este problema pueden intentar definir funciones que logren los mismos resultados pero de manera iterativa.
 */
 
-//*******************FACTORIAL
-// OPCION ITERATIVA
-function nFactorialIterativo(n) {
-  
-  let factorial = n;
-
-  if (n === 1 || n === 0) {
-    return 1;
-  }
-
-  while (n > 1) {
-    n--; // 4
-    factorial = factorial * n; // 5*4 = 20
-  }
-
-  return factorial;
-}
-
-// OPCION RECURSIVA
 function nFactorial(n) {
 
-  if (n >1){
-  
-    return (n*nFactorial(n-1));
-  }
-  else {
-    return (1)
-  };
-
+if (n==1 || n==0) return 1;
+else if (n<0) return 0;
+return (n*nFactorial(n-1))
 }
 
 console.log(nFactorial(5));
 
-//*******************FIBONACCI
 function nFibonacci(n) {
+  if (n==0) return 0;
+  else if (n==1 || n==2) return 1;
 
-  if (n==0){
-    
-    return (0);
-  }
-  else if (n==1) {
-    return(1);
-  } 
-  else {
-
-    return( nFibonacci(n-1) + nFibonacci(n-2));
-  }
-
+  return (nFibonacci(n-1)+ nFibonacci(n-2) )
 }
 
-console.log(nFibonacci(6));
+
+// //*******************FACTORIAL
+// // OPCION ITERATIVA
+// function nFactorialIterativo(n) {
+  
+//   let factorial = n;
+
+//   if (n === 1 || n === 0) {
+//     return 1;
+//   }
+
+//   while (n > 1) {
+//     n--; // 4
+//     factorial = factorial * n; // 5*4 = 20
+//   }
+
+//   return factorial;
+// }
+
+// // OPCION RECURSIVA
+// function nFactorial(n) {
+
+//   if (n >1){
+  
+//     return (n*nFactorial(n-1));
+//   }
+//   else {
+//     return (1)
+//   };
+
+// }
+
+// console.log(nFactorial(5));
+
+// //*******************FIBONACCI
+// function nFibonacci(n) {
+
+//   if (n==0){
+    
+//     return (0);
+//   }
+//   else if (n==1) {
+//     return(1);
+//   } 
+//   else {
+
+//     return( nFibonacci(n-1) + nFibonacci(n-2));
+//   }
+
+// }
+
+// console.log(nFibonacci(6));
 
 
 /*
@@ -83,54 +100,68 @@ Implementar la clase Queue, sabiendo que es una estructura de tipo FIFO, donde e
 Pueden utilizar class o función constructora.
 */
 
+
+class Queue {
+  constructor() {
+    this.arr = [];
+  }
+  enqueue(value) {
+    this.arr.push(value);
+  }
+  dequeue() {
+    return this.arr.shift();
+  }
+  size() {
+    return this.arr.length;
+  }
+}
+
+
 //* AMBAS FORMAS SE PUEDEN CREAR METODOS DENTRO DE LA FUNCION O POR PROTOTYPES
 //* CLASE , la mejor forma de implementar 
-class Queue2 {
-  constructor(){
-    this.arr=[]; //propiedad
-  }
+// class Queue2 {
+//   constructor(){
+//     this.arr=[]; //propiedad
+//   }
 
 
-  //tambien se puede ingresar el metodo dentro de la clase como una funcion
-  dequeue () { 
-    return this.arr.shift();
+//   //tambien se puede ingresar el metodo dentro de la clase como una funcion
+//   dequeue () { 
+//     return this.arr.shift();
 
-  }
-}
+//   }
+// }
 
-// ingresar metodos por prototype
-Queue2.prototype.enqueue = function (value) {
-  this.arr.push(value);
-};
+// // ingresar metodos por prototype
+// Queue2.prototype.enqueue = function (value) {
+//   this.arr.push(value);
+// };
 
-Queue2.prototype.size = function () {
-  return this.arr.length;
-};
-
-let b = new Queue2();
-b.enqueue (5);
-console.log(b);
+// Queue2.prototype.size = function () {
+//   return this.arr.length;
+// };
 
 
-//* FUNCION CONSTRUCTURA
-function Queue() {
-  this.arr=[];
-}
-Queue.prototype.enqueue = function (value) {
-  this.arr.push(value);
-};
 
-Queue.prototype.dequeue = function () {
-  return this.arr.shift();
-};
+// //* FUNCION CONSTRUCTURA
+// function Queue() {
+//   this.arr=[];
+// }
+// Queue.prototype.enqueue = function (value) {
+//   this.arr.push(value);
+// };
 
-Queue.prototype.size = function () {
-  return this.arr.length;
-};
+// Queue.prototype.dequeue = function () {
+//   return this.arr.shift();
+// };
 
-let a = new Queue();
-a.enqueue (5);
-console.log(a);
+// Queue.prototype.size = function () {
+//   return this.arr.length;
+// };
+
+// let a = new Queue();
+// a.enqueue (5);
+// console.log(a);
 
 
 /*⚠️ No modificar nada debajo de esta línea ⚠️*/
