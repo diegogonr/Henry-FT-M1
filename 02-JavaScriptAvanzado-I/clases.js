@@ -6,26 +6,26 @@
 //*  contexto de ejecucion = creacion (se crean las variables y funciones, mas no su valor) + ejecucion
 //*  nuevo llamado a función nuevo contexto de ejecución 
 
-// const yo = "Gama"; // global
-// console.log(yo);
+const yo = "Gama"; // global
+console.log(yo);
 
-// const miFuncion = () => {
-//   const x = "esta es la funcion"; // local
-//   console.log(x); 
-// };
+const miFuncion = () => {
+  const x = "esta es la funcion"; // local
+  console.log(x); 
+};
 
-// miFuncion();
+miFuncion();
 
-// let en ='hi'
-// function person(){
-//   var name = 'FT'
-//   function firstName(){
-//     return name
-//   }
-//   console.log(en + firstName());
-// }
+let en ='hi'
+function person(){
+  var name = 'FT'
+  function firstName(){
+    return name
+  }
+  console.log(en + firstName());
+}
 
-// person();
+person();
 
 
 
@@ -88,7 +88,6 @@
 // console.log(this); //apunta al objeto global
 
 // const describir = function () {
-//   // ${}
 //   console.log(`Soy ${this.nombre} y tengo un gato llamado ${this.mascota}`);
 
 //   //console.log("primero", this); //apunta al objeto global
@@ -111,21 +110,6 @@
 // };
 
 // instructor.describirA();
-
-// const instructorOtro = {
-//   nombre: "Sol",
-//   mascota: "Palta",
-
-//   describirA: function () {
-//     // ${}
-//     console.log(`Soy ${this.nombre} y tengo un gato llamado ${this.mascota}`);
-
-//     // soy este instructor. nombre y tengo un gato llamado este instructor.mascota
-
-//     console.log("sol", this);
-//   },
-// };
-// instructorOtro.describirA();
 
 
 // function prueba() {

@@ -9,18 +9,6 @@ function factorear(num) {
   let aux=num;
   let fact =[1];
 
-  //? NO ES NECESARIO LA FUNCIÓN ES PRIMO, ya que se ocupan todos los valores en el while
-
-  // function esprimo (val){
-  //   if (val<=1) return false;
-  //   for (let i = 2; i < val; i++) {
-  //           if (val%i ==0){
-  //             return false;
-  //           }
-  //   }
-  //   return true;
-  // }
-
   for (let i = 2; i < num; i++) {
     // if(esprimo(i)){
       while (aux%i==0){
@@ -34,36 +22,36 @@ function factorear(num) {
 
 console.log(factorear(180));  //[1,2,2,3,3,5]
 
+
+
+
 function bubbleSort(array) {
   // Implementar el método conocido como bubbleSort para ordenar de menor a mayor
   // el array recibido como parámetro
   // Devolver el array ordenado resultante
   // Tu código:
-  let aux;
-  let n = array.length;
-
-  for (let j = 0; j < array.length; j++) {
-    n--;
-    for (let i = 0; i <n; i++) {
-      if (array[i] > array[i+1]) {
-        aux = array[i];
-        array[i] = array[i+1];
-        array[i+1] = aux;
+  let j=0;
+  let l = array.length;
+  for (let k = 0; k < array.length; k++) {
+    for (let i = 1; i < l; i++) {
+      j=i-1;
+      let aux = array[j];
+      if (array[i]< array[j]){
+        array[j] = array[i];
+        array[i] = aux;
       }
     }
+    l--;
   }
-  return (array);
+  return array;
+}
 
-  //? OTRA FORMA
- // while
-  //[7,6,3,1,4,5]
-  // ^ ^
-  // i
-  // i+1
-  // i > i+1
-  // aux = i
-  // invierto los valores
-  
+console.log(bubbleSort([5, 1, 4, 2, 8])); //[1, 2, 4, 5, 8]
+
+//? OTRA FORMA
+
+// function bubbleSort(array) {
+
   // let swap = true; // creare un marcador para verificar si aun se estan haciendo cambios
   // while (swap) {
   //   // si aun se estan haciendo cambios continuo
@@ -79,10 +67,8 @@ function bubbleSort(array) {
   //   }
   // }
   // return array;
+//}
 
-}
-
-console.log(bubbleSort([10, 10, 16, 12])); //[1, 2, 4, 5, 8]
 
 
 function insertionSort(array) {
@@ -90,35 +76,25 @@ function insertionSort(array) {
   // el array recibido como parámetro utilizando arreglos
   // Devolver el array ordenado resultante
   // Tu código:
-  let aux;
 
-  for (let i = 0; i < array.length-1; i++) {
-    console.log(i);
-    for (let j = i; j >= 0; j--) {
-      console.log (array);
-      if(array[j]>array[j+1]){
-
-        aux = array[j+1];
+  for (let i = 1; i < array.length; i++) {
+    let aux = array[i];
+    for (let j = i-1; j>=0 ; j--) {
+      if (aux<array[j]){
         array [j+1] = array[j];
-        array[j] = aux;
-
-      } else{
-        console.log("break");
-        break;}      
+        array [j] = aux;  
+      } else {
+        break;
+      }
     }
   }
   return array;
 
+}
 
-  //    ☠️ [2,6,7,3,1,,4,5]
-  //              i
-  //            j
-  //aux =
-  // arr[j]=
-  // while => j siga dentro del array y mientras que aux < j
-  //recorro j--
-  // termino el recorrido y hago l intercambi0
-  //   ​
+console.log(insertionSort([5, 1, 10,20,3,4, 2, 8])); //[1, 2, 4, 5, 8]
+
+
   //   for (let i = 1; i < array.length; i++) {
   //     let j = i - 1;
   //     let aux = array[i];
@@ -131,9 +107,8 @@ function insertionSort(array) {
   //   return array;
   // }
 
-}
 
-console.log(insertionSort([5,  4, 2,3,10, 1])); //[1, 2, 4, 5, 8]
+
 
 console.log( "selectionSort")
 function selectionSort(array) {
@@ -165,24 +140,6 @@ function selectionSort(array) {
 
 
   //? OTRA FORMA//////////////////////
-  // Pseudo codigo
-  // selecciono a min = i
-  // i = j+1   si j < i
-  // min - j
-  // avanzo ambos marcadores hasta que length  === 0
-  // colocar mi valor min en la posicion i
-
-  /*
-    [5,6,3,1,2,4,7]
-       i 
-            j
-   min = 1 
-
-  j < i
-  newmin = j
-  aux = j 
-  hasta no tener mas elementos
-  */
 
   // for (let i = 0; i < array.length - 1; i++) {
   //   let min = i;

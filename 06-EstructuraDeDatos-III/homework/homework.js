@@ -12,14 +12,13 @@
   El ábrol utilizado para hacer los tests se encuentra representado en la imagen bst.png dentro del directorio homework.
 */
 function BinarySearchTree(value) {
-   this.value = value;
+   this.value = value;   // is root
    this.left = null;
    this.right = null;
 }
 
 BinarySearchTree.prototype.insert = function (value) {
-
-   // Der / mayor
+  // Der / mayor
  if (value >= this.value) {
    if (this.right === null) {
      this.right = new BinarySearchTree(value);
@@ -28,7 +27,7 @@ BinarySearchTree.prototype.insert = function (value) {
    }
  }
 
-   // Izq / menor
+  // Izq / menor
   if (value < this.value) {
    if (this.left === null) {
      this.left = new BinarySearchTree(value);
@@ -36,12 +35,9 @@ BinarySearchTree.prototype.insert = function (value) {
      this.left.insert(value);           //recursiva
    }
  }
-
 }
 
 BinarySearchTree.prototype.size = function () {
-
-
   //Caso A ambas ramas ocupadas
   if (this.right !== null && this.left !== null)
     return 1 + this.left.size() + this.right.size();  // se hace la recursion para ver el tamaño de esas ramas
@@ -55,41 +51,39 @@ BinarySearchTree.prototype.size = function () {
 };
 
 
-BinarySearchTree.prototype.contains = function (value) {
-   // si lo encuentro
-   if (this.value === value) return true;
- 
-   // si no lo encuentro y es mayor
-   if (value > this.value) {
-     if (this.right === null) {
-       return false;
-     } else {
-       return this.right.contains(value);
-     }
- 
-     // return this.right === null ?false : this.right.contains(value);
-   }
- 
-   // si no lo encuentro y es menor
- 
-   if (value < this.value) {
-     if (this.left === null) {
-       return false;
-     } else {
-       return this.left.contains(value);
-     }
-   }
- };
- 
 
- BinarySearchTree.prototype.depthFirstForEach = function (cb, order) {
-   // if(order === "pre-order"){
-   // }
-   // if(order === "post-order"){
-   // }
-   // else{
-   // }
- 
+BinarySearchTree.prototype.contains = function (value) {
+
+  if (this.value === value) return true;
+  
+  // Der / mayor
+  if (value > this.value) {
+    if (this.right === null) {return false;}
+    else return (this.right.contains(value));   //recursion para irnos al sigueinte nodo
+  }
+  
+   // Izq / menor
+  if (value < this.value) {
+    if (this.left === null) {return false;}
+    else return (this.left.contains(value));   //recursion para irnos al sigueinte nodo
+  }
+
+}
+
+let arbolito=  new BinarySearchTree(15);
+
+arbolito.insert(4);
+arbolito.insert(16);
+arbolito.insert(2);
+console.log(arbolito)
+
+////////******************************** */
+//cb guarda los valores que lo guardo en un array
+
+let cb = function (val){ testArr.push(val); }
+
+BinarySearchTree.prototype.depthFirstForEach = function (cb, order) {
+
    switch (order) {
      // root => izq > der
      case "pre-order":
@@ -106,18 +100,15 @@ BinarySearchTree.prototype.contains = function (value) {
        break;
  
      // izq - root - der
-     default:
-       if (this.left !== null) this.left.depthFirstForEach(cb, order);
-       cb(this.value);
-       if (this.right !== null) this.right.depthFirstForEach(cb, order);
+     default: //in-order
+       if (this.left && this.left.depthFirstForEach(cb, order));   
+       cb(this.value); 
+       if (this.right && this.right.depthFirstForEach(cb, order)); 
        break;
    }
  }; // preorder postorder inorder
  
- let imprimirValor = function (x) {
-   console.log(x);
- };
- 
+
  BinarySearchTree.prototype.breadthFirstForEach = function (cb, almacen = []) {
    cb(this.value);
  
@@ -135,20 +126,7 @@ BinarySearchTree.prototype.contains = function (value) {
  };
  
 
- let arbolito=  new BinarySearchTree(15);
 
- arbolito.insert(4);
- arbolito.insert(16);
- arbolito.insert(2);
- arbolito.insert(9);
- arbolito.insert(21);
- /**
-  *          15
-  *    4             16
-  * 2    9        null  21
-  */
-
-arbolito.breadthFirstForEach(imprimirValor);
 
 
 

@@ -1,4 +1,8 @@
-//******LINKENDIST************************* */
+
+//*****************************************************************
+//*************LINKENDIST**************** */
+//*****************************************************************
+
 class Node {
   constructor(data) {
     this.data = data;
@@ -6,71 +10,68 @@ class Node {
   }
 }
 
-class LinkedList {
+class LinkedList {   //crear una lista 
   constructor() {
     this.head = null;
-    this._length = 0;
   }
 }
 
 let ListaMascotas = new LinkedList();
-
 console.log("Lista vacia", ListaMascotas);
 
 
 LinkedList.prototype.add = function (valor) { //Se agrega en forma de nodo
-  let node = new Node(valor);       //{data:valor , next:null}
+  let node = new Node(valor);       //{data:valor , next:null} se crea la caja
+  let current = this.head;          // puntero, parate en el primer elemento
 
-  let current = this.head; // parate en el primer elemento
-  console.log("%cAgregando el nodo:", "color: cyan", node);
-
-  if (!current) {
-    // si la listya esta vacia
+  if (!current) {// si la lista esta vacia, solo entra una vez
     this.head = node;
   } else {
-    while (current.next) {
-      // mientras que no encuente el ultimo valor
-      current = current.next; // avanzo un paso
+    while (current.next) {      // mientras que no encuente el ultimo valor
+      current = current.next;    // avanzo un paso
     }
     current.next = node;
-    console.log("%cAhora yo soy el ultimo Nodo", "color:magenta", node);
   }
-
-  this._length++;
   return node;
 };
 
-//TODO: eliminar el primer elemento
+let newLista = new LinkedList();
+console.log(newLista.add(5))
+console.log(newLista.add(7))
+console.log(newLista.add(10))
+console.log(newLista)
+
+////////////////////////////////////////////////?
+////?  SIZE
+LinkedList.prototype.size = function(){
+  let current = this.head;
+  let counter=0;
+  if (!current){
+    return 0;
+  }
+  else {
+    while(current){
+      counter++;
+      current =current.next;
+    }
+  }
+  return counter;
+}
+
+console.log(newLista.size());
+
+////////////////////////////////////////////////?
+////?  Eliminar el primer elemento
 LinkedList.prototype.removeHead = function () {
-  let head = this.head;     //apunta al head es decir al que tiene data bartolomiau
-
-  let aux = head;
-
-  console.log("%cHEAD", "color:red", aux);
-  console.log("%cNEW HEAD", "color:red", head.next);
+  let head = this.head;     //apunta al head es decir al que tiene data
 
   this.head = head.next;   //se pisa el valor de bartolomiau y el next que es palta lo sobrepone
-
-  this._length--;
   return head;
 };
 
-ListaMascotas.add("Bartolomiau");
+newLista.removeHead();
 
-console.log("HEAD", ListaMascotas);
-
-ListaMascotas.add("Palta");
-
-console.log("HEAD", ListaMascotas);
-
-ListaMascotas.add("Tota");
-console.log("Lista", ListaMascotas);
-ListaMascotas.add("Milaneso");
-console.log("Lista", ListaMascotas);
-
-ListaMascotas.removeHead();
-
-console.log("%cLista", "color:red", ListaMascotas);
+console.log(newLista);
 
 
 

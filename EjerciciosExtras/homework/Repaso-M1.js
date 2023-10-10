@@ -14,7 +14,6 @@ let countArray = function (array) {
   //??? OPCION LARGA
   // Tu código aca:
   //   let total = 0;
-  //   //[[6,5,7,8]]
   //   array.forEach((elemento) => {
   //     if (Array.isArray(elemento)) {   // es un array= 
   //       total += countArray(elemento);
@@ -55,9 +54,9 @@ let objeto1 = {
   b: 2,
   c: [1, {a: 1}, "Franco"],
 };
+
 // countProps(obj)--> Deberia devolver 10 ya que el objeto inicial tiene 3 propiedades, pero a su vez
 // dentro de a tenemos 3 propiedades mas, luego a3 tiene otras 3 y por ultimo c tiene una extra.
-
 // Propiedades: a, a1, a2, a3, f, a, c, o, b, c --> 10 en total
 
 let countProps = function (obj) {

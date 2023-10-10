@@ -38,6 +38,35 @@ function quickSort(array) {
 
 //[7,3,4,5,2,6]
 
+
+function mergeSort2(array) {
+
+  if(array.length<2) return array;
+
+  const mitad = Math.floor (array.length/2);
+  let left  = array.slice (0, mitad);
+  let right = array.slice (mitad);
+
+  array =[]
+
+  left  = mergeSort2 (left)
+  right = mergeSort2 (right)
+
+  while (left.length && right.length) {
+    if(left[0] < right[0]){
+      array.push (left.shift())
+    }
+    else array.push (right.shift())
+  }
+
+  array = array.concat (left,right)
+  return array;
+
+}
+
+
+
+
 function mergeSort(array) {
   // Implementar el método conocido como mergeSort para ordenar de menor a mayor
   // el array recibido como parámetro
@@ -86,10 +115,6 @@ function merge(izq, der) {
   let indiceDer = 0;
   let array = [];
 
-  //
-  //                 ^                      ^
-  // resultado [3,2,7,4,5,6]
-
   while (indiceIzq < izq.length && indiceDer < der.length) {
     if (izq[indiceIzq] < der[indiceDer]) {
       array.push(izq[indiceIzq]);
@@ -101,28 +126,6 @@ function merge(izq, der) {
   }
 
   return array.concat(izq.slice(indiceIzq)).concat(der.slice(indiceDer));
-
-  // OPCION B
-
-  //[,,]                          [4,5,6]
-  // let unidos = [];
-
-  // while (izq.length && der.length) {
-  //   if (izq[0] <= der[0]) {
-  //     unidos.push(izq.shift());
-  //   } else {
-  //     unidos.push(der.shift());
-  //   }
-  // }
-  // while (izq.length) {
-  //   unidos.push(izq.shift());
-  // }
-
-  // while (der.length) {
-  //   unidos.push(der.shift());
-  // }
-
-  // return unidos;
 }
 
 // No modificar nada debajo de esta línea

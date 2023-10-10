@@ -1,15 +1,7 @@
-// function Nodo(data) {
-//   this.data = data;
-//   this.left = null;
-//   this.right = null;
-// }
+//*****************************************************************
+//*************ARBOLES**************** */
+//*****************************************************************
 
-// // pseudo codigo
-// function ArbolBinario(data) {
-//   this.data = data;
-//   this.left = subNodoIzq;
-//   this.right = subNodoDer;
-// }
 
 function BinarySearchTree(data) {
   this.data = data;
