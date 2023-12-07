@@ -85,31 +85,31 @@ person();
 //* This keyword
 ////////////////////////////////////////////////////////////////////////*
 
-// console.log(this); //apunta al objeto global
+console.log(this); //apunta al objeto global
 
-// const describir = function () {
-//   console.log(`Soy ${this.nombre} y tengo un gato llamado ${this.mascota}`);
+const describir = function () {
+  console.log(`Soy ${this.nombre} y tengo un gato llamado ${this.mascota}`);
 
-//   //console.log("primero", this); //apunta al objeto global
-// };
+  //console.log("primero", this); //apunta al objeto global
+};
 
-// describir();
+describir();
 
-// const instructor = {
-//   nombre: "Gama",
-//   mascota: "Bartolomiau",
+const instructor = {
+  nombre: "Gama",
+  mascota: "Bartolomiau",
 
-//   describirA: function () {
-//     // ${}
-//     console.log(`Soy ${this.nombre} y tengo un gato llamado ${this.mascota}`);
+  describirA: function () {
+    // ${}
+    console.log(`Soy ${this.nombre} y tengo un gato llamado ${this.mascota}`);
 
-//     // soy este instructor. nombre y tengo un gato llamado este instructor.mascota
+    // soy este instructor. nombre y tengo un gato llamado este instructor.mascota
 
-//     console.log( "gama",this);
-//   },
-// };
+    console.log( "gama",this);
+  },
+};
 
-// instructor.describirA();
+instructor.describirA();
 
 
 // function prueba() {
